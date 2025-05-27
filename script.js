@@ -19,6 +19,13 @@ keep going until 1 score go to 5
 when score go to 5 prompt the winner  
 creat function thet decler winner its get a parameter of the first one who score 5
 if function get parameter from pc score decler pc win vis vera 
+play game logic -
+start function
+check if of the score is 5
+if its 5 show wining massage
+if pc score is 5 pc win msg
+if humen score is 5 humen win msg
+
 */
 
 
@@ -59,7 +66,7 @@ function playRound () {
    let roundWinCondetion = false
 
    while (human===computer) {
-      prompt("It's a tie! Try again.");
+      alert("It's a tie! Try again.");
       human = getHumanChoice ();
       computer = getComputerChoice () ;
 }
@@ -93,3 +100,16 @@ else  prompt(`computer wins this round! Score: Human - ${humanScore}, Computer -
 } 
 
 
+function playGame () {
+playRound ()
+while (humanScore === 5||pcScore === 5) {
+if (humanScore > pcScore ){
+  prompt (`Human wins the game! Score: Human - ${humanScore}, Computer - ${pcScore} gg`)
+}
+else prompt (`Pc wins the game! Score: Human - ${humanScore}, Computer - ${pcScore} you lost :<`)
+}
+playGame ()
+
+}
+
+playGame ()
